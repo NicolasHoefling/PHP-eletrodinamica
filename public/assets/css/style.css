@@ -1,0 +1,284 @@
+:root {
+    color-scheme: light;
+    --fundo: #f4f6f8;
+    --texto: #172b3a;
+    --secundario: #526571;
+    --destaque: #ffd000;
+    --borda: #ffd900;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    color: var(--texto);
+    background: var(--fundo);
+    line-height: 1.6;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.2rem max(5%, calc((100% - 1080px) / 2));
+    background: #172b3a;
+    color: white;
+}
+
+.identidade {
+    font-weight: 700;
+}
+
+.nome-etapa {
+    color: #ccdbdf;
+    font-size: .9rem;
+}
+
+main {
+    max-width: 1080px;
+    margin: auto;
+    padding: 2.5rem 1.5rem;
+}
+
+.introducao {
+    max-width: 700px;
+    margin-bottom: 2rem;
+}
+
+.categoria {
+    font-size: .75rem;
+    letter-spacing: .12em;
+    font-weight: 750;
+    color: var(--destaque);
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    letter-spacing: -.03em;
+    margin: .8rem 0 1rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+}
+
+.introducao>p:last-child,
+.conceito>p {
+    color: var(--secundario);
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-bottom: 1rem;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.aba {
+    padding: .7rem 1.2rem;
+    border: 1px solid var(--borda);
+    border-radius: .6rem;
+    background: white;
+    color: var(--texto);
+}
+
+.aba.ativa {
+    background: var(--destaque);
+    color: white;
+    border-color: var(--destaque);
+}
+
+.painel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.painel[hidden] {
+    display: none;
+}
+
+.conceito,
+.calculadora {
+    padding: 2rem;
+}
+
+.conceito {
+    border-right: 1px solid var(--borda);
+}
+
+.conceito .formula {
+    color: var(--texto);
+    font-size: 1.9rem;
+    font-weight: 700;
+    background: #eef5f2;
+    border-radius: .6rem;
+    padding: 1rem;
+}
+
+.nota {
+    font-size: .9rem;
+    color: var(--secundario);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: .4rem;
+}
+
+label span {
+    color: var(--secundario);
+    font-weight: 400;
+}
+
+input {
+    width: 100%;
+    padding: .8rem;
+    border: 1px solid #aebfc5;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    color: var(--texto);
+    background: white;
+}
+
+input:focus-visible,
+button:focus-visible {
+    outline: 3px solid #68baab;
+    outline-offset: 3px;
+}
+
+.calcular {
+    width: 100%;
+    border: 0;
+    padding: .9rem 1rem;
+    border-radius: .5rem;
+    background: var(--destaque);
+    color: white;
+    font-weight: 650;
+}
+
+.calcular:disabled {
+    cursor: wait;
+    opacity: .65;
+}
+
+.resposta {
+    border-top: 1px solid var(--borda);
+    margin-top: 1.5rem;
+    padding-top: .8rem;
+    overflow-wrap: anywhere;
+}
+
+.resposta .valor {
+    font-size: 2rem;
+    color: var(--destaque);
+    font-weight: 750;
+    margin: .3rem 0;
+}
+
+.resposta ol {
+    padding-left: 1.25rem;
+    color: var(--secundario);
+}
+
+.erro {
+    color: #a82424;
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: .8rem;
+    color: var(--secundario);
+}
+
+@media (max-width: 680px) {
+    .cabecalho {
+        flex-direction: column;
+        gap: .2rem;
+    }
+
+    main {
+        padding: 1.5rem 1rem;
+    }
+
+    .painel {
+        grid-template-columns: 1fr;
+    }
+
+    .conceito {
+        border-right: 0;
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .conceito,
+    .calculadora {
+        padding: 1.3rem;
+    }
+}
+
+/* Contraste para a paleta amarela escolhida, mantendo suas cores. */
+.categoria,
+.resposta .valor {
+    color: var(--texto);
+}
+
+.aba.ativa,
+.calcular {
+    color: var(--texto);
+}
+
+a.aba {
+    display: inline-block;
+    text-decoration: none;
+}
+
+select {
+    width: 100%;
+    padding: .8rem;
+    border: 1px solid #aebfc5;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    color: var(--texto);
+    background: white;
+    font: inherit;
+}
+
+select:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--texto);
+    outline-offset: 3px;
+}
+
+.campo[hidden] {
+    display: none;
+}
+
+#painel-potencia .formula {
+    font-size: 1.15rem;
+    overflow-wrap: anywhere;
+}
+
+.encerramento {
+    padding: 2rem;
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 1rem;
+}

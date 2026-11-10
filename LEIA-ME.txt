@@ -1,0 +1,55 @@
+TRABALHO I - ELETRODINAMICA
+Aluno: Nicolas Hoefling de C
+Disciplina: Tecnicas de Programacao
+
+COMO ABRIR NO WINDOWS
+
+1. Extraia o ZIP inteiro para uma pasta do computador.
+2. Abra a pasta extraida.
+3. De dois cliques em INICIAR.bat.
+
+O navegador abre automaticamente. Nao e preciso digitar comandos,
+informar o caminho da pasta, iniciar o Apache ou configurar banco de dados.
+Mantenha a janela do iniciador aberta durante o uso.
+Para encerrar o servidor, pressione Ctrl+C ou feche essa janela.
+A opcao Sair da pagina encerra a calculadora, mas o servidor continua
+disponivel enquanto a janela do iniciador estiver aberta.
+
+O iniciador usa uma porta livre entre 8000 e 8020. Se o navegador nao
+abrir automaticamente, copie o endereco mostrado na janela.
+
+REQUISITOS
+
+O ZIP de entrega inclui PHP 8.0.30 para Windows 10/11 de 64 bits (x64).
+Nao requer instalacao de PHP ou XAMPP. O computador precisa do runtime
+Visual C++ usado pelo PHP, geralmente ja instalado por outros programas.
+
+Se aparecer uma mensagem sobre VCRUNTIME140.dll ausente, instale o
+Visual C++ Redistributable x64 pelo link oficial da Microsoft:
+https://aka.ms/vs/17/release/vc_redist.x64.exe
+
+Os arquivos Microsoft do sistema nao sao copiados no pacote.
+
+Se estiver usando apenas os arquivos-fonte, o iniciador tambem encontra
+PHP no PATH ou na instalacao padrao do XAMPP. Em Linux/macOS, use PHP
+8 ou superior e execute: php -S 127.0.0.1:8000 -t public
+
+CODIGO E TESTES
+
+public/        Pagina, estilos e JavaScript.
+src/           Classes de POO e calculos.
+bootstrap.php  Carregamento e registro das operacoes.
+tests/         Verificacoes dos exemplos e entradas invalidas.
+README.md      Explicacao da estrutura e dos recursos de POO.
+runtime/php/   PHP portatil e licencas, incluidos no ZIP de entrega.
+
+Para executar os testes no pacote de entrega, abra um terminal nesta
+pasta e use: runtime\php\php.exe -n tests\validar-calculos.php
+
+Este produto inclui software PHP. Reconhecimento da distribuicao:
+This product includes PHP software, freely available from
+http://www.php.net/software/
+
+Licencas originais em runtime/php/license.txt e
+runtime/php/readme-redist-bins.txt.
+O servidor e destinado ao uso local deste trabalho academico.
